@@ -28,6 +28,8 @@ def typeInRagnarok(text):
 
 def castSkills():
     print('$$$ Casting skills')
+    ser.write(bytes('F1', encoding='utf-8'))
+    sleep(1.5)
     ser.write(bytes('F3', encoding='utf-8'))
     sleep(1.2)
     ser.write(bytes('F1', encoding='utf-8'))
@@ -56,12 +58,10 @@ while True:
     while i < 70:
         sleep(0.5)
         ser.write(bytes('ALT3', encoding='utf-8'))
-        sleep(1.5)
+        sleep(0.75)
 
         for position in skillPositions:
-            moveMouse(position)
             castSkills()
-            moveMouse((position[0]*-1, position[1]*-1))
         
         i += 1
     backHomeAndStoreStuff()

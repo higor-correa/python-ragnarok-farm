@@ -7,10 +7,10 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
 def getMonsterPositions(
-    needle_img_path, haystack_img_path, threshold=0.6, method = cv.TM_CCOEFF_NORMED ,debug_mode=None
+    needle_img_path, haystack_img_path, threshold=0.6, imReadMode = cv.IMREAD_GRAYSCALE, method = cv.TM_CCOEFF_NORMED ,debug_mode=None
 ):
-    haystack_img = cv.imread(haystack_img_path, cv.IMREAD_GRAYSCALE)
-    needle_img = cv.imread(needle_img_path, cv.IMREAD_GRAYSCALE)
+    haystack_img = cv.imread(haystack_img_path, imReadMode)
+    needle_img = cv.imread(needle_img_path, imReadMode)
     needle_w = needle_img.shape[1]
     needle_h = needle_img.shape[0]
 
@@ -63,4 +63,4 @@ def getMonsterPositions(
     
     return points
 
-points = getMonsterPositions("target-imgs/test01.png", 'screenshot.png', debug_mode='points')
+points = getMonsterPositions("target-imgs/test02.png", 'screenshot.png', debug_mode='points')

@@ -84,13 +84,11 @@ void setAlootid() {
 }
 
 void typeInRagnarok(String value) {
+  Keyboard.print(value);
+  delay(60);
   Keyboard.press(KEY_RETURN);
   Keyboard.releaseAll();
-  delay(50);
-  Keyboard.println(value);
-  delay(50);
-  Keyboard.press(KEY_RETURN);
-  Keyboard.releaseAll();
+  delay(60);
 }
 
 void moveToStorage() {
